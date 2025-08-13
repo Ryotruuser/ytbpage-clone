@@ -1,0 +1,73 @@
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+/* header part */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem 1rem;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.col1{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.ytbLogo{
+    width: 90px;
+    height: 20px;
+}
+
+
+.col2 {
+    width: 400px;
+    height: 30;
+    background-color: #CCCCCC;
+    padding-right: .5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.searchInput {
+    width: 348px;
+    height: 30px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.col2 i {
+    font-size: 1rem;
+}
+
+
+.col3{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.col3 .profilepic{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* main part/ */
+
+main {
+    height: 100vh;
+    background-color: #f9f9f9;
+}
+
