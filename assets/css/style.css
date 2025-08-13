@@ -67,13 +67,94 @@ i {
 /* main part/ */
 
 main {
-    height: 100vh;
+    height: 100%;
     background-color: #f9f9f9;
     width: 100%;
     display: flex;
-    padding: 2rem;
+    padding: 0 1rem 0 4.5rem;
+    gap: 2rem;
+}
+.container__principal{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 952px;
 }
 
+.video__title{
+    font-size: 20px;
+    font-weight: 600px;
+}
+
+.channel__details{
+    display: flex;
+    align-items: center;
+}
+
+.details__col1{
+    display: flex;
+    gap: 1rem;
+}
+
+.channel__img{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.channel__detalils_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.channel__name{
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.channel__cont{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.channel__sub{
+    font-size: 14px;
+    background-color: #CC0000;
+    padding: 0 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.details__col2{
+    display: flex;
+    margin-left: 2.5rem;
+    gap: 3rem;
+}
+
+.video__details{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.video__details_views{
+    font-size: 14px;
+}
+
+.video__details_desc{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* menu lateral */ 
 .container__lateral{
     display: flex;
     flex-direction: column;
@@ -88,6 +169,7 @@ main {
     width: 160px;
     height: 90px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .card__texts{
@@ -103,11 +185,13 @@ main {
     font-size: 14px;
     font-weight: 600;
     word-wrap: break-word;
+    cursor: pointer;
 }
 
 .card__channel{
     font-size: 12px;
     color: #515151;
+    cursor: pointer;
 }
 
 .card__views{
