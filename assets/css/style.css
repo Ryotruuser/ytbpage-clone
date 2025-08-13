@@ -69,5 +69,48 @@ i {
 main {
     height: 100vh;
     background-color: #f9f9f9;
+    width: 100%;
+    display: flex;
+    padding: 2rem;
 }
 
+.container__lateral{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card__recomendations{
+    display: flex;
+    gap: 1rem;
+}
+.card__img{
+    width: 160px;
+    height: 90px;
+    object-fit: cover;
+}
+
+.card__texts{
+    display: flex;
+    flex-direction: column;
+    width: 196px;
+    height: 89px;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.card__title{
+    font-size: 14px;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.card__channel{
+    font-size: 12px;
+    color: #515151;
+}
+
+.card__views{
+    font-size: 12px;
+    color: #515151;
+}
