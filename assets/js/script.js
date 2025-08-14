@@ -1,5 +1,12 @@
 const likeBtn = document.querySelector('.bi-hand-thumbs-up');
 const deslikeBtn = document.querySelector('.bi-hand-thumbs-down');
+const videoFrame = document.querySelector('.container__principal iframe');
+
+const videoInicial = 'uk3zexnbndE';
+
+const videoEmbed = `https://www.youtube.com/embed/${videoInicial}?si=x6pR93QJ8rRmVguv`
+
+console.log(videoFrame.setAttribute('src', videoEmbed));
 
 likeBtn.addEventListener("click", (e)=>{
     if(e.target.classList.contains('bi-hand-thumbs-up')){
