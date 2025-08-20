@@ -386,7 +386,7 @@ function mainPageVideo(){
                     <span>Compartilhar</span>
                 </div>
 
-                <div class="video__" >
+                <div class="video__download" >
                     <i class="bi bi-download"></i>
                     <span>Download</span>
                 </div>

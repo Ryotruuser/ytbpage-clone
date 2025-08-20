@@ -11,6 +11,8 @@
     --text-color: #9A9A9C;
     --link-color: #9A9A9C;
     --icon-color: #C7C8C9;
+    --search-bg-color: rgba(255, 255, 255, 0.2);
+    --search-color: #fff;
 }
 
 :root[data-theme ="light"]{
@@ -26,6 +28,8 @@
     --text-color: #28292E;
     --link-color: #28292E;
     --icon-color: #56575A;
+    --search-bg-color: rgba(0, 0, 0, 0.2);
+    --search-color: #000
 }
 
 body{
@@ -129,6 +133,10 @@ main {
     gap: 2rem;
     margin-bottom: 2rem;
     color: var(--primary-color);
+}
+
+iframe {
+    border-radius: 10px;
 }
 .container__principal{
     display: flex;
@@ -238,6 +246,7 @@ main {
     height: 5.625rem;
     object-fit: cover;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .card__texts{
@@ -275,32 +284,85 @@ main {
 }
 
 /* medias */
-@media screen and (max-width: 1366px) {
-    main{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 4rem ; 
+
+@media screen and (min-width: 360px) and (max-width: 810px) {
+    /* header part */
+
+    header{ 
+        padding: 1rem .3rem;
     }
 
-    .container__principal{
-        width: 100%;
+    .col1 {
+        gap: .5rem;
+    }
+
+    .ytbLogo{
+        width: 34px;
+    }
+
+    .col2{
+        width: 10px;
+        background-color: var(--primary-bg-color);
+    }
+    .searchInput{
+        display: none;
+    }
+    
+    .bi-search{
+        padding: .6rem;
+        background: var(--search-bg-color);
+        border-radius: 360px;
+        color: var(--search-color);
+    }
+
+    .col2 i {
+        font-size: .875rem;
+    }
+
+    .bi-camera-video, .bi-bell, .ytbTitleLogo{
+        display: none;
+    }
+    
+    /* main part */
+
+    .channel__details{
+        flex-direction: column;
+    }
+
+    main {
+        padding: 5rem .3rem;
     }
 
     iframe {
+        border-radius: 10px;
+        height: 300px;
+    }
+
+    .video__title{
+        font-size: 1rem;
+    }
+
+    .video__share span, .video__download span {
+        display: none;
+    }
+
+    .channel__details{
+        gap: 1rem;
+    }
+
+    .details__col1, .details__col2{
+        margin: 0;
         width: 100%;
     }
-
-    .container__lateral{
-        flex-wrap: wrap;
-        flex-direction: row;
-        margin-bottom: 2rem;
+    .details__col2{
+        gap: 1.25rem;
     }
 
-    .text__recomendation{
-        display: flex;
-    }
 }
+
+
+
+
 
 @media screen and (min-width: 1440px) {
     main{
@@ -315,3 +377,5 @@ main {
         height: 50rem;
     }
 }
+
+
