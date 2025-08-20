@@ -1,6 +1,8 @@
 const videoFrame = document.querySelector('.container__principal iframe');
 const principal = document.querySelector('.container__principal');
 const sidebar = document.querySelector('.container__lateral');
+const rootHtml = document.documentElement;
+const toggleTheme = document.getElementById("toggleTheme");
 let selecionado = 0;
 
 let videos = [
@@ -402,6 +404,8 @@ function mainPageVideo(){
  `;
 }
 
+toggleTheme.addEventListener("click", changeTheme);
+
 function sidebarVideoAdd(){
     sidebar.innerHTML = "";
 
@@ -428,4 +432,17 @@ function sidebarVideoAdd(){
             verificarLikeDeslike();
         });
     });
+}
+
+function changeTheme(){
+    const currentTheme = rootHtml.getAttribute("data-theme");
+
+    if(currentTheme === "dark"){
+        rootHtml.setAttribute("data-theme", "light");
+    }else {
+        rootHtml.setAttribute("data-theme", "dark");
+    }
+
+    toggleTheme.classList.toggle("bi-brightness-high");
+    toggleTheme.classList.toggle("bi-moon-stars");
 }

@@ -1,5 +1,36 @@
+:root, :root[data-theme ="dark"]{
+
+    /* Dark theme */
+    --primary-color: #F0F0F0;
+
+    --primary-bg-color: #111217;
+    --secondary-bg-color: #28292E;
+    --border-color: #56575A;
+
+    --title-color: #F0F0F0;
+    --text-color: #9A9A9C;
+    --link-color: #9A9A9C;
+    --icon-color: #C7C8C9;
+}
+
+:root[data-theme ="light"]{
+    /* Light Theme */
+
+    --primary-color: #0B0B0F;
+
+    --primary-bg-color: #FFFFFF;
+    --secondary-bg-color: #f9f9f9;
+    --border-color: #56575A;
+
+    --title-color: #0B0B0F;
+    --text-color: #28292E;
+    --link-color: #28292E;
+    --icon-color: #56575A;
+}
+
 body{
     font-family: "Roboto", sans-serif;
+    background-color: var(--secondary-bg-color);
 }
 
 /* header part */
@@ -9,13 +40,36 @@ header {
     justify-content: space-between;
     padding: .5rem 1rem;
     align-items: center;
-    background-color: #FFFFFF;
+    background-color: var(--primary-bg-color);;
     position: fixed;
 }
 
 i {
     font-size: 24px;
     cursor: pointer;
+    color: var(--primary-color);
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.ytbTitleLogo{
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.3rem;
+}
+
+.ytbLogo {
+    width: 36px;
+    height: 36px;
+}
+
+.bi-search{
+    color: #0B0B0F;
 }
 
 .col1{
@@ -23,12 +77,6 @@ i {
     align-items: center;
     gap: 2rem;
 }
-
-.ytbLogo{
-    width: 5.6rem;
-    height: 1.25rem;
-}
-
 
 .col2 {
     width: 25rem;
@@ -66,16 +114,21 @@ i {
     object-fit: cover;
 }
 
+#toggleTheme{
+    transition: ease-in-out .4s;
+}
+
 /* main part/ */
 
 main {
     height: 100%;
-    background-color: #f9f9f9;
+    background-color: var(--secondary-bg-color);
     width: 100%;
     display: flex;
     padding: 4rem 1rem 0 4.5rem;
     gap: 2rem;
     margin-bottom: 2rem;
+    color: var(--primary-color);
 }
 .container__principal{
     display: flex;
@@ -197,6 +250,7 @@ main {
 }
 
 .card__title{
+    color: var(--primary-color);
     font-size: .875rem;
     font-weight: 600;
     word-wrap: break-word;
@@ -211,11 +265,13 @@ main {
     font-size: .75rem;
     color: #515151;
     cursor: pointer;
+    color: var(--text-color);
 }
 
 .card__views{
     font-size: .75rem;
     color: #515151;
+    color: var(--text-color);
 }
 
 /* medias */
