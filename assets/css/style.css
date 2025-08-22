@@ -80,6 +80,7 @@ header {
 
 header i {
     color: var(--title-color);
+    cursor: pointer;
     font-size: var(--font-size-s);
 }
 
@@ -114,6 +115,7 @@ header i {
     width: 30px;
     height: 30px;
     border-radius: 360px;
+    cursor: pointer;
 }
 
 /* main-largevideo-container */
@@ -122,7 +124,7 @@ header i {
     display: flex;
     flex-direction: column;
     gap: var(--font-size-s);
-    padding: 3rem .5rem;
+    padding: 3rem .5rem 0 .5rem;
 }
 
 .main__container iframe {
@@ -169,6 +171,10 @@ header i {
 
 .subName{
     display: none;
+}
+
+.video__like i, .video__deslike i, .video__download i, .video__share i, .channel__sub{
+    cursor: pointer;
 }
 
 .channel__cont{
@@ -224,6 +230,7 @@ header i {
     font-size: var(--font-size-xs);
     text-align: center;
     width: 100%;
+    padding: 1rem;
 }
 
 .recomendation__video{
@@ -236,7 +243,9 @@ header i {
     width: 10rem;
     border-radius: 10px;
     height: 6.35rem;
+    cursor: pointer;
 }
+
 
 .card__texts{
     display: flex;
@@ -247,6 +256,12 @@ header i {
 .card__title{
     font-size: .875rem;
     font-weight: 500;
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.card__title:hover{
+    color: #8B0000;
 }
 
 .card__channel{
@@ -525,4 +540,59 @@ header i {
         height: 90px;
     }
 
+}
+
+@media screen and (min-width: 1920px){
+    /* headerpart */
+
+    header i {
+        font-size: 2rem;
+    }
+
+    .ytbLogo{
+        width: 36px;
+    }
+    .ytbTitleLogo{
+        font-size: 2rem;
+    }
+
+    .profilepic{
+        width: 40px;
+        height: 40px;
+    }
+
+    .col2{
+       border-radius: 0;
+    }
+    .searchInput{
+        border-radius: 0;
+        font-size: 1.5rem;
+    }
+    .bi-search{
+        padding: 0 1rem;
+    }
+
+    /* mainpage */
+    main{
+        gap: 1rem;
+    }
+
+    .main__container{
+        padding: 3.5rem 0;
+    }
+    .main__container iframe {
+        width: 1400px;
+        height: 800px;
+        border-radius: 0;
+    }
+
+    /* recomendationsTab */
+
+    .card__img{
+        border-radius: 0;
+    }
+
+    .video__details_views, .video__details_desc{
+        font-size: 1rem;
+    }
 }
