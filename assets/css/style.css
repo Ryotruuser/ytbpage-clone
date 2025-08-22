@@ -142,7 +142,6 @@ header i {
     display: flex;
     align-items: center;
     gap: var(--padding-xs);
-    width: 100%;
 }
 
 .channel__img{
@@ -164,6 +163,10 @@ header i {
 
 .channel__name {
     font-weight: 600;
+}
+
+.subName{
+    display: none;
 }
 
 .channel__cont{
@@ -229,6 +232,7 @@ header i {
 
 .card__img{
     width: 10rem;
+    border-radius: 10px;
     height: 6.35rem;
 }
 
@@ -249,4 +253,177 @@ header i {
 
 .card__views{
     font-size: .725rem;
+}
+
+
+@media screen and (min-width: 768px){
+
+    /* main-largevideo-container */
+    .main__container iframe {
+        height: 400px;
+    }
+    .channel__details{
+        flex-direction: row;
+        align-items: center;
+    }
+    .video__share, .video__download {
+        display: flex;
+        gap: var(--padding-xs);
+    }
+    .video__share span, .video__download span{
+        display: block;
+    }
+
+    .video__title{
+        font-size: var(--font-size-s);
+    }
+
+    .video__details_views, .video__details_desc{
+        font-size: 1rem;
+    }
+
+    /* main-recomentation-tab */
+
+    .recomendation__text{
+        font-size: var(--font-size-s);
+    }
+
+    .recomendation__video{
+        height: 10rem;
+    }
+    .card__img{
+        width: 18rem;
+        height: 10rem;
+    }
+    
+    .card__texts{
+        height: 100%;
+        align-items: start;
+        gap: var(--padding-xs)
+    }
+
+    .card__title{
+        font-size: var(--font-size-s);
+    }
+    .card__views, .card__channel{
+        font-size: 1rem;
+    }
+
+}
+
+@media screen and (min-width: 1024px){
+    /* header-menu */
+    header i {
+        font-size: 1.5rem;
+    }
+
+    .ytbTitleLogo{
+        display: block;
+        font-size: var(--font-size-s);
+    }
+
+    .col2{
+        background-color: var(--border-color);
+        height: 1.5rem;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        gap: .375rem;
+        width: 13.125rem;
+    }
+
+    .searchInput{
+        display: flex;
+        height: 1.5rem;
+        outline: none;
+    }
+
+    .bi-search{
+        background-color: transparent;
+        color: #fff;
+        transform: scaleX(-1);
+        cursor: pointer;
+    }
+
+    .bi-camera-video, .bi-bell{
+        display: block;
+        cursor: pointer;
+    }
+
+    .profilepic{
+        width: 34px;
+        height: 34px;
+    }
+    /* main-largevideo-container */
+    .main__container iframe {
+        height: 600px;
+    }
+
+    .video__title{
+        font-size: var(--font-size-m);
+    }
+
+    .channel__img{
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .channel__detalils_text{
+        flex-direction: column;
+        align-items: start;
+    }
+    
+    .channel__name{
+        font-size: 1.25rem;
+    }
+
+    .channel__cont{
+        display: flex;
+        gap: .2rem;
+    }
+
+    .subName{
+        display: block;
+    }
+
+    .video__details_views, .video__details_desc{
+        font-size: 1.15rem;
+    } 
+
+    .channel__sub{
+        padding: .7rem var(--padding-l);
+        font-size: 1.2rem;
+    }
+
+    .video__like, .video__deslike, .video__download, .video__share {
+        font-size: 1.25rem;
+    }
+
+    /* main-recomentation-tab */
+
+    /* .recomendation__text{
+        font-size: var(--font-size-s);
+    }
+
+    .recomendation__video{
+        height: 10rem;
+    }
+    .card__img{
+        width: 18rem;
+        height: 10rem;
+    }
+    
+    .card__texts{
+        height: 100%;
+        align-items: start;
+        gap: var(--padding-xs)
+    }
+
+    .card__title{
+        font-size: var(--font-size-s);
+    }
+    .card__views, .card__channel{
+        font-size: 1rem;
+    } */
+
 }
