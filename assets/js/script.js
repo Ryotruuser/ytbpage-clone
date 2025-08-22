@@ -346,6 +346,7 @@ function renderMainVideo(video) {
         src=${video.videoId} 
         title="YouTube video player" 
         frameborder="0" 
+        autoplay = 1
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
         referrerpolicy="strict-origin-when-cross-origin" 
         allowfullscreen>
@@ -417,6 +418,7 @@ function renderSidebar() {
       moveItem(videos, index + 1, 0);
       renderMainVideo(videos[0]);
       renderSidebar();
+      principal.scrollIntoView({ behavior: "smooth" });
     });
   });
 }
