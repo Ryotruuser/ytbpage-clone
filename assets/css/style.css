@@ -129,7 +129,7 @@ header i {
 }
 
 .video__title{
-    font-size: var(--font-size-s);
+    font-size: 1rem;
 }
 
 .channel__details{
@@ -209,11 +209,44 @@ header i {
 /* main-recomentation-tab */
 .main__recomendation_tab{
     display: flex;
-    padding: 0 .5rem;;
+    flex-direction: column;
+    gap: var(--padding-xl);
+    padding: 0 .5rem;
+    flex-wrap: wrap;
 }
 
 .recomendation__text{
     font-size: var(--font-size-xs);
     text-align: center;
     width: 100%;
+}
+
+.recomendation__video{
+    display: flex;
+    align-items: center;
+    gap: .375rem;
+}
+
+.card__img{
+    width: 10rem;
+    height: 6.35rem;
+}
+
+.card__texts{
+    display: flex;
+    flex-direction: column;
+    gap: .375rem;
+}
+
+.card__title{
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.card__channel{
+    font-size: .725rem;
+}
+
+.card__views{
+    font-size: .725rem;
 }
