@@ -1,6 +1,6 @@
 const videoFrame = document.querySelector('.container__principal iframe');
-const principal = document.querySelector('.container__principal');
-const sidebar = document.querySelector('.container__lateral');
+const principal = document.querySelector('.main__container');
+const sidebar = document.querySelector('.main__recomendation_tab');
 const rootHtml = document.documentElement;
 const toggleTheme = document.getElementById("toggleTheme");
 let selecionado = 0;
@@ -69,7 +69,7 @@ let videos = [
   {
     videoId: "https://www.youtube.com/embed/lTYwBW1uAQ8",
     title: "Alex na Selva! 🦁🌳",
-    channelName: "DreamWorks Madagascar em Português",
+    channelName: "DreamWorks",
     thumb: "https://img.youtube.com/vi/lTYwBW1uAQ8/maxresdefault.jpg",
     channelIcon: "https://img.youtube.com/vi/lTYwBW1uAQ8/maxresdefault.jpg",
     views: "6,9 mil visualizações há 3 dias",
@@ -162,7 +162,7 @@ let videos = [
     `
   },
   {
-    "videoId": "https://www.youtube.com/embed/zlmsqVWPf98",
+    "videoId": "../assets/mov/frieren.mp4",
     "title": "How Many Triangles are in This Picture?",
     "channelName": "Crunchyroll",
     "thumb": "https://img.youtube.com/vi/zlmsqVWPf98/maxresdefault.jpg",
@@ -296,10 +296,6 @@ let videos = [
   }
 ];
 
-sidebarVideoAdd()
-mainPageVideo();
-verificarLikeDeslike();
-
 
 function verificarLikeDeslike(){
     const likeBtn = document.querySelector('.bi-hand-thumbs-up');
@@ -344,94 +340,85 @@ function moveItem(array, fromIndex, toIndex) {
   return array;
 }
 
-function mainPageVideo(){
-    principal.innerHTML = `
-        <iframe 
-            width="952" 
-            height="537" 
-            src=${videos[0].videoId} 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-        </iframe>
-        <h1 class="video__title">${videos[0].title}</h1>
+function renderMainVideo(video) {
+  principal.innerHTML = `
+    <iframe 
+        src=${video.videoId} 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+    </iframe>
+    <h1 class="video__title">${video.title}</h1>
 
-        <div class="channel__details">
-
-            <div class="details__col1">
-                <img class="channel__img" src="${videos[0].channelIcon}" alt="">
-                <div class="channel__detalils_text">
-                    <h4 class="channel__name">${videos[0].channelName}</h4>
-                    <h4 class="channel__cont">${videos[0].subs}</h4>
-                </div>
-                <button onclick="subToMe()" class="channel__sub">Inscreva-se</button>
+    <div class="channel__details">
+        <div class="details__col1">
+            <img class="channel__img" src="${video.channelIcon}" alt="">
+            <div class="channel__detalils_text">
+                <h4 class="channel__name">${video.channelName}</h4>
+                <h4 class="channel__cont">${video.subs}</h4>
             </div>
+            <button onclick="subToMe()" class="channel__sub">Inscreva-se</button>
+        </div>
 
-            <div class="details__col2">
-
-                <div class="video__like">
-                    <i class="bi bi-hand-thumbs-up"></i>
-                    <span>${videos[0].likes}</span>
-                </div>
-
-                <div class="video__deslike">
-                    <i class="bi bi-hand-thumbs-down"></i>
-                    <span>Não gostei</span>
-                </div>
-
-                <div class="video__share">
-                    <i class="bi bi-share-fill"></i>
-                    <span>Compartilhar</span>
-                </div>
-
-                <div class="video__download" >
-                    <i class="bi bi-download"></i>
-                    <span>Download</span>
-                </div>
-
-                </div>
+        <div class="details__col2">
+            <div class="video__like">
+                <i class="bi bi-hand-thumbs-up"></i>
+                <span>${video.likes}</span>
             </div>
-
-            <div class="video__details">
-                <h4 class="video__details_views">${videos[0].views}</h4>
-                <p class="video__details_desc">
-                    ${videos[0].desc}
-                </p>
+            <div class="video__deslike">
+                <i class="bi bi-hand-thumbs-down"></i>
+                <span>Não gostei</span>
+            </div>
+            <div class="video__share">
+                <i class="bi bi-share-fill"></i>
+                <span>Compartilhar</span>
+            </div>
+            <div class="video__download" >
+                <i class="bi bi-download"></i>
+                <span>Download</span>
             </div>
         </div>
- `;
+    </div>
+
+    <div class="video__details">
+        <h4 class="video__details_views">${video.views}</h4>
+        <p class="video__details_desc">${video.desc}</p>
+    </div>
+  `;
+
+  verificarLikeDeslike(); // sempre reanexa os listeners
 }
 
 toggleTheme.addEventListener("click", changeTheme);
 
-function sidebarVideoAdd(){
-    sidebar.innerHTML = "";
+sidebar.addEventListener("click", (e)=>{
+    console.log(e)
+})
 
-    videos.forEach((video, index) => {
-        if (index === 0) return;
+function renderSidebar() {
+  sidebar.innerHTML = "";
 
-        const card = document.createElement("div");
-        card.classList.add("card__recomendations");
-        card.innerHTML = `
-            <img src=${video.thumb} alt="" class="card__img">
-            <div class="card__texts">
-                <h4 class="card__title">${video.title}</h4>
-                <p class="card__channel">${video.channelName}</p>
-                <p class="card__views">${video.views}</p>
-            </div>
-        `;
-        sidebar.appendChild(card);
+  videos.slice(1).forEach((video, index) => {
+    const card = document.createElement("div");
+    card.classList.add("recomendation__video");
+    card.innerHTML = `
+      <img src=${video.thumb} alt="" class="card__img">
+      <div class="card__texts">
+          <h4 class="card__title">${video.title}</h4>
+          <p class="card__channel">${video.channelName}</p>
+          <p class="card__views">${video.views}</p>
+      </div>
+    `;
+    sidebar.appendChild(card);
 
-        card.addEventListener("click", ()=>{
-            const atualPrincipal = videos[0];
-            moveItem(videos, index, 0);
-            mainPageVideo();
-            sidebarVideoAdd();
-            verificarLikeDeslike();
-        });
+    card.addEventListener("click", () => {
+      moveItem(videos, index + 1, 0);
+      renderMainVideo(videos[0]);
+      renderSidebar();
     });
+  });
 }
 
 function changeTheme(){
@@ -446,3 +433,11 @@ function changeTheme(){
     toggleTheme.classList.toggle("bi-brightness-high");
     toggleTheme.classList.toggle("bi-moon-stars");
 }
+
+function init(){
+
+    renderMainVideo(videos[0]);
+    renderSidebar();
+}
+
+init();
