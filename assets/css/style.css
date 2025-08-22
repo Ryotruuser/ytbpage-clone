@@ -51,6 +51,8 @@
     --padding-xl: 2.5rem;
     --padding-xxl: 3.25rem;
 
+
+    --font-size-xxs: .75rem;
     --font-size-xs: .875rem;
     --font-size-s: 1.25rem;
     --font-size-m: 1.5rem;
@@ -399,31 +401,128 @@ header i {
         font-size: 1.25rem;
     }
 
-    /* main-recomentation-tab */
+}
 
-    /* .recomendation__text{
-        font-size: var(--font-size-s);
+@media screen and (min-width: 1280px){
+     /* main-recomentation-tab */
+
+     .main__recomendation_tab{
+        flex-direction: row;
+     }
+
+    .recomendation__text{
+        width: 100%;
+        margin-bottom: 2rem;
     }
 
     .recomendation__video{
-        height: 10rem;
+        align-items: center;
     }
+
     .card__img{
-        width: 18rem;
-        height: 10rem;
+        width: 12rem;
+        height: 6.625rem;
     }
-    
+
     .card__texts{
-        height: 100%;
-        align-items: start;
-        gap: var(--padding-xs)
+        width: 12.25rem;
+        justify-content: center;
     }
 
     .card__title{
-        font-size: var(--font-size-s);
+        font-size: var(--font-size-xs);
     }
-    .card__views, .card__channel{
-        font-size: 1rem;
-    } */
+
+    .card__channel, .card__views{
+        font-size: var(--font-size-xxs);
+    }
+}
+
+@media screen and (min-width: 1440px){
+    /* header-menu */
+    header {
+        padding: 1rem 1.5rem;
+    }
+    .col2{
+        width: 22rem;
+        height: 2.5rem;
+        gap: 0;
+    }
+    .searchInput{
+        width: 21.75rem;
+        height: 2.5rem;
+    }
+
+    .bi-search{
+        padding:0 1.5rem;
+        font-size: 1.5rem;
+        transform: scaleX(1);
+    }
+
+    header i {
+        font-size: 1.5rem;
+    }
+
+    /* mainPage */
+
+    main{
+        padding: 3rem 3.2rem;
+        display: flex;
+    }
+
+    .recomendation__text{
+        display: none;
+    }
+
+    .main__container iframe {
+        border-radius: 10px;
+        width: 952px;
+        height: 537px;
+    }
+
+    .channel__details{
+        gap: 2rem;
+    }
+
+    .video__title{
+        font-size: 1.25rem;
+    }
+
+    .channel__img{
+        width: 42px;
+        height: 42px;
+    }
+
+    .channel__sub{
+        margin-left: 1rem;
+        text-transform: uppercase;
+    }
+
+    .channel__detalils_text{
+        gap: 0;
+    }
+
+    .details__col2 i {
+        font-size: 1.5rem;
+    }
+    .channel__name, .channel__sub, .channel__cont, .video__details_views, .video__details_desc{
+        font-size: .875rem;
+    }
+
+    /* recomenationTab */
+
+    .main__recomendation_tab{
+        padding: 3rem 0;
+        gap: 1rem;
+    }
+
+    .recomendation__video{
+        height: auto;
+    }
+
+    .card__img{
+        width: 160px;
+        height: 90px;
+    }
 
 }
